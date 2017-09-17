@@ -18,6 +18,17 @@ Installation
 $ go get github.com/cowkeys/ckjson
 ```
 
+Document
+--------
+
+-   `func NewCkj(name,msg string) *ckjson`
+
+    new a ckjson client
+
+-   `func (*NewCkj)JsonToStruct()`
+
+    print go struct
+    
 Quick start
 -----------
 ### base use
@@ -146,16 +157,5 @@ type TestCK struct {
 }
 
 ```
-
-Document
---------
-
--   `func NewCkj(name,msg string) *ckjson`
-
-    new a ckjson client
-
--   `func (*NewCkj)JsonToStruct()`
-
-    print go struct
 
 
