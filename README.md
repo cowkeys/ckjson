@@ -1,7 +1,8 @@
 # ckjson
 [![Build Status](https://travis-ci.org/cowkeys/ckjson.svg?branch=master)](https://travis-ci.org/cowkeys/ckjson)
 [![Coverage Status](https://coveralls.io/repos/github/cowkeys/ckjson/badge.svg?branch=master)](https://coveralls.io/github/cowkeys/ckjson?branch=master)
-ckjson can be used to convert json string to go-struct quickly
+
+#### ckjson can be used to convert json string to go-struct quickly
 
 **Features:**
 
@@ -19,7 +20,7 @@ $ go get github.com/cowkeys/ckjson
 
 Quick start
 -----------
-###base use
+### base use
 ```go
 package main
 
@@ -37,7 +38,7 @@ func main() {
 	ck.JsonToStruct()
 }
 ```
-#####output:
+##### output:
 
 ```go
 type Employees struct {
@@ -53,7 +54,7 @@ type TestCK struct {
 }
 ```
 
-###deep nesting
+### deep nesting
 ```go
     json := `{"company": {
         "name": "google",
@@ -70,7 +71,7 @@ type TestCK struct {
 	ck3 := ckjson.NewCkj("TestCK", json)
 	ck3.JsonToStruct()
 ```
-#####output:
+##### output:
 
 ```go
 type LoopTwo struct {
@@ -96,7 +97,7 @@ type TestCK struct {
 }
 
 ```
-###name cases (upper/lower/camel)
+### name cases (upper/lower/camel)
 ```go
 //auto filter '_' , '-' , ':' , '.' ...
 json :=    `{ "first_name":"Bill" }`
@@ -110,7 +111,7 @@ ck.JsonToStruct()
 ck.UpperCase = true
 ck.JsonToStruct()//aaa_BCD -> AAABCD (except first char) 
 ```
-#####output:
+##### output:
 ```go
 type TestCK struct {
 	FirstName string
@@ -124,7 +125,7 @@ type TestCK struct {
 	FIRSTNAME string
 }
 ```
-###tag display
+### tag display
 ```go
 json :=    `{ "first_name":"Bill" }`
 
@@ -134,7 +135,7 @@ ck.JsonToStruct()
 ck.JsonTag = false // set not display tag
 ck.JsonToStruct()
 ```
-#####output:
+##### output:
 ```go
 type TestCK struct {
 	FirstName string `json:"first_name"`
