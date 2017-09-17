@@ -7,12 +7,12 @@ import (
 )
 
 func TestCkJson(t *testing.T) {
-	//baseuse()
-	//nesting()
-	//nesting2()
+	baseuse()
+	nesting()
+	nesting2()
 	tag()
 	cases()
-	//big()
+	big()
 }
 
 func baseuse() {
