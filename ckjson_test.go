@@ -7,12 +7,12 @@ import (
 )
 
 func TestCkJson(t *testing.T) {
-	baseuse()
-	nesting()
-	nesting2()
+	//baseuse()
+	//nesting()
+	//nesting2()
 	tag()
 	cases()
-	big()
+	//big()
 }
 
 func baseuse() {
@@ -118,7 +118,7 @@ func tag() {
 	ck := ckjson.NewCkj("TestCK", json)
 	ck.JsonToStruct()
 
-	ck.JsonTag = false // set not display tag
+	ck.JsonTag = true // set not display tag
 	ck.JsonToStruct()
 
 }
@@ -132,6 +132,7 @@ func cases() {
 	ck.JsonToStruct()
 
 	ck.UpperCase = true
+	ck.JsonTag = false
 	ck.JsonToStruct() //aaa_BCD -> AAABCD (except first char)
 }
 

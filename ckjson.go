@@ -46,12 +46,15 @@ func NewCkj(name, msg string) *ckjson {
 
 func (c *ckjson) FlushCkj() {
 	*c = *&ckjson{
-		Name:   c.Name,
-		Msg:    c.Msg,
-		TagMap: map[string]string{},
-		Parent: map[string]interface{}{},
-		Subs:   []map[int]string{},
-		Out:    []string{},
+		Name:      c.Name,
+		Msg:       c.Msg,
+		TagMap:    map[string]string{},
+		Parent:    map[string]interface{}{},
+		Subs:      []map[int]string{},
+		Out:       []string{},
+		JsonTag:   true,
+		LowerCase: false,
+		UpperCase: false,
 	}
 }
 
@@ -103,9 +106,7 @@ func (c *ckjson) subStruct(key string, out interface{}) {
 			c.subList(orik, v)
 			tmptype = k
 		}
-		// if tmptype == E_float {
-		// todo
-		// }
+
 		index++
 		m[index] = fmt.Sprintf(F_kv, k, tmptype, c.TagMap[k])
 	}
