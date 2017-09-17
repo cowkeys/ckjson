@@ -13,3 +13,5 @@ go:
   - 1.7
   - 1.8
   - tip
+  
+script: go test
