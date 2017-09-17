@@ -12,7 +12,6 @@ const (
 	E_map    = "map[string]interface {}"
 	E_list   = "[]interface {}"
 	E_string = "string"
-	E_float  = "float64"
 )
 
 var (
@@ -209,10 +208,6 @@ func (c *ckjson) keyCase(str string) string {
 		}
 	}
 	return upperStr
-}
-
-//todo
-func (c *ckjson) intOrFloat(i float64) {
 }
 
 //name filter from 4 char

@@ -11,6 +11,7 @@ func TestCkJson(t *testing.T) {
 	nesting()
 	nesting2()
 	tag()
+	cases()
 	big()
 }
 
@@ -45,56 +46,57 @@ func nesting2() {
 	json := `{
     "button": [
         {
-            "name": "杂志订阅",
+            "name": "MAg",
             "sub_button": [
                 {
                     "type": "view",
-                    "name": "杂志订阅",
+                    "name": "magzine",
                     "url": "test1"
                 },
                 {
                     "type": "view",
-                    "name": "订阅流程",
+                    "name": "magzine2",
                     "url": "test2"
                 },
                 {
                     "type": "view",
-                    "name": "最新优惠",
+                    "name": "times",
                     "url": "test3"
                 }
             ]
         },
         {
-            "name": "精彩内容",
+            "name": "favor",
             "sub_button": [
                 {
                     "type": "click",
-                    "name": "书店",
+                    "name": "book",
                     "key": "v_1_2"
                 },
                 {
                     "type": "click",
-                    "name": "最新杂志",
+                    "name": "book2",
                     "key": "v_1_1"
                 },
                 {
                     "type": "click",
-                    "name": "网站专题",
-                    "key": "v_2_1"
+                    "name": "web",
+                    "key": "v_2_1",
+                    "price":1000
                 }
             ]
         },
         {
-            "name": "账号",
+            "name": "account",
             "sub_button": [
                 {
                     "type": "click",
-                    "name": "个人中心",
+                    "name": "count",
                     "key": "v_3_1"
                 },
                 {
                     "type": "click",
-                    "name": "激活订阅码",
+                    "name": "cs",
                     "key": "v_3_2"
                 }
             ]
@@ -119,6 +121,18 @@ func tag() {
 	ck.JsonTag = false // set not display tag
 	ck.JsonToStruct()
 
+}
+
+func cases() {
+	json := `{ "first_name":"Bill" }`
+	ck := ckjson.NewCkj("TestCK", json)
+	ck.JsonToStruct() //default : aaa_BCD -> AaaBcd (Camel case)
+
+	ck.LowerCase = true //aaa_BCD -> Aaabcd (except first char)
+	ck.JsonToStruct()
+
+	ck.UpperCase = true
+	ck.JsonToStruct() //aaa_BCD -> AAABCD (except first char)
 }
 
 func big() {
