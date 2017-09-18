@@ -35,6 +35,7 @@ type ckjson struct {
 	Out       []string
 }
 
+// NewCkj returns a new ckjson
 func NewCkj(name, msg string) *ckjson {
 	return &ckjson{
 		Name:    name,
@@ -58,6 +59,7 @@ func (c *ckjson) FlushCkj() {
 	}
 }
 
+// JsonToStruct returns ckjson after printjson
 func (c *ckjson) JsonToStruct() *ckjson {
 	F_kv = F_kv_ori
 	if c.JsonTag {
