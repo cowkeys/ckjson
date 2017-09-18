@@ -1,6 +1,6 @@
 # ckjson
-[![Build Status](https://travis-ci.org/cowkeys/ckjson.svg?branch=master)](https://travis-ci.org/cowkeys/ckjson)
-[![Coverage Status](https://coveralls.io/repos/github/cowkeys/ckjson/badge.svg?branch=master)](https://coveralls.io/github/cowkeys/ckjson?branch=master)
+[![Build Status](https://travis-ci.org/cowkeys/ckjson.png?branch=master)](https://travis-ci.org/cowkeys/ckjson)
+[![Coverage Status](https://coveralls.io/repos/github/cowkeys/ckjson/badge.png?branch=master)](https://coveralls.io/github/cowkeys/ckjson?branch=master)
 
 #### ckjson can be used to convert json string to go-struct quickly
 
@@ -18,6 +18,17 @@ Installation
 $ go get github.com/cowkeys/ckjson
 ```
 
+Document
+--------
+
+-   `func NewCkj(name,msg string) *ckjson`
+
+    new a ckjson client
+
+-   `func (*NewCkj)JsonToStruct()`
+
+    print go struct
+    
 Quick start
 -----------
 ### base use
@@ -146,16 +157,5 @@ type TestCK struct {
 }
 
 ```
-
-Document
---------
-
--   `func NewCkj(name,msg string) *ckjson`
-
-    new a ckjson client
-
--   `func (*NewCkj)JsonToStruct()`
-
-    print go struct
 
 
