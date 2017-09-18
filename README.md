@@ -1,6 +1,7 @@
 # ckjson
 [![Build Status](https://travis-ci.org/cowkeys/ckjson.png?branch=master)](https://travis-ci.org/cowkeys/ckjson)
-[![Coverage Status](https://coveralls.io/repos/github/cowkeys/ckjson/badge.png?branch=master)](https://coveralls.io/github/cowkeys/ckjson?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/cowkeys/ckjson/badge.svg?branch=master)](https://coveralls.io/github/cowkeys/ckjson?branch=master)
+[![GoDoc](https://godoc.org/github.com/cowkeys/ckjson?status.svg)](http://godoc.org/github.com/cowkeys/ckjson)
 
 #### ckjson can be used to convert json string to go-struct quickly
 
