@@ -7,6 +7,7 @@ import (
 )
 
 func TestCkJson(t *testing.T) {
+	testerr()
 	baseuse()
 	nesting()
 	nesting1()
