@@ -145,13 +145,8 @@ func (c *ckjson) appendStr(kv string) {
 
 //output cmd
 func (c *ckjson) printStruct() {
-	if c == nil {
-		return
-	}
-
 	for _, value := range c.Subs {
 		for i := 0; i < len(value); i++ {
-
 			fmt.Println(value[i])
 		}
 	}

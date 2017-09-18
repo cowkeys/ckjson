@@ -9,34 +9,70 @@ import (
 func TestCkJson(t *testing.T) {
 	baseuse()
 	nesting()
+	nesting1()
 	nesting2()
 	tag()
 	cases()
 	big()
 }
 
+func testerr() {
+	json := `{ "exampleError": { "from": { "json": true } } `
+	ck := ckjson.NewCkj("TestCK", json)
+	ck.JsonToStruct()
+}
+
 func baseuse() {
-	json := `{"employees": [
-    { "firstName":"Bill" , "salary":10000,"flag":true },
-    { "first-Name":"George" , "lastName":"Bush","flag":false },
-    { "firstName":"Thomas" , "depart_tag":"IT" }]}`
+	json := `{ "example": { "from": { "json": true } } }`
 	ck := ckjson.NewCkj("TestCK", json)
 	ck.JsonTag = true
 	ck.JsonToStruct()
 }
 
 func nesting() {
-	json := `{"company": {
-        "name": "google",
-        "address": {
-            "country": "us",
-            "code": 1234,
-            "loop_one": {
-                "loop_two": [
-                    1,
-                    2
-                ]
-            }}}}`
+	json := `{
+  "company": {
+    "name": "google",
+    "address": {
+      "country": "us",
+      "code": 1234,
+      "loop_one": {
+        "loop_two": [
+          1,
+          2
+        ]
+      }
+    }
+  }
+}`
+	ck := ckjson.NewCkj("TestCK", json)
+	ck.JsonTag = true
+	ck.JsonToStruct()
+}
+
+func nesting1() {
+	json := `{
+  "company": {
+    "name": "google",
+    "netstarr": [
+      [
+        {
+          "abc": 1111
+        }
+      ]
+    ],
+    "address": {
+      "country": "us",
+      "code": 1234,
+      "loop_one": {
+        "loop_two": [
+          1,
+          2
+        ]
+      }
+    }
+  }
+}`
 	ck := ckjson.NewCkj("TestCK", json)
 	ck.JsonTag = true
 	ck.JsonToStruct()
